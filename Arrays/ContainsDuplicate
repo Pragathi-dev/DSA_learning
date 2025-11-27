@@ -1,0 +1,38 @@
+// LeetCode 217 - Contains Duplicate
+// NeetCode 150 - Arrays
+// Time: O(n^2)
+// Space: O(1)
+// Brute Force Approach
+// Compare each element with every other element
+// If a duplicate is found, return true
+// If no duplicates are found after all comparisons, return false
+// Note: The outer loop should run from 0 to nums.length - 1
+// The inner loop should run from i + 1 to nums.length - 1
+// to avoid index out of bounds error
+// and to ensure all pairs are checked without repetition
+// Example: nums = [1,2,3,1]
+// The outer loop starts with i = 0 (value 1)
+// The inner loop starts with j = 1 (value 2)
+// It checks nums[0] with nums[1], nums[2], nums[3]
+// Then the outer loop increments to i = 1 (value 2)
+// The inner loop starts with j = 2 (value 3)
+// It checks nums[1] with nums[2], nums[3]
+// Then the outer loop increments to i = 2 (value 3)
+// The inner loop starts with j = 3 (value 1)
+// It checks nums[2] with nums[3]
+// Then the outer loop increments to i = 3 (value 1)
+
+
+
+class Solution {
+    public boolean hasDuplicate(int[] nums) {
+       for(int i=0;i<=nums.length;i++) {
+        for(int j=i+1;j<nums.length;j++){
+            if(nums[i]==nums[j]){
+                return true;
+            }
+        }
+        }
+        return false;
+    }
+}
